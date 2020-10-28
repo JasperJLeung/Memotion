@@ -37,8 +37,8 @@ let getEmotion = (url) => {
         getEmotion(result.info.secure_url);
         document.querySelector("#upload_widget").classList.toggle("display", 1);
         document.querySelector(
-          ".mood__image-container"
-        ).innerHTML = `<img class="mood__image" src=${result.info.secure_url}>`;
+          ".mood-results__image-container"
+        ).innerHTML = `<img class="mood-results__image" src=${result.info.secure_url}>`;
       }
     }
   );
@@ -59,25 +59,24 @@ let getEmotion = (url) => {
         "https://cors-anywhere.herokuapp.com/https://some-random-api.ml/img/panda"
       )
       .then((results) => {
-        document.querySelector(".mood__text").innerHTML =
+        document.querySelector(".mood-results__mood-text").innerHTML =
           "Uh Oh Someone's Looking Sad :(";
         document.querySelector(
-          ".mood__meme"
-        ).innerHTML = `<img class="mood__meme-image" src=${results.data.link}>`;
+          ".mood-results__meme"
+        ).innerHTML = `<img class="mood-results__meme-image" src=${results.data.link}>`;
         console.log(results.data.link);
       });
   };
   
   let beHappy = () => {
     axios
-      .get(
-        "https://cors-anywhere.herokuapp.com/https://some-random-api.ml/img/cat"
-      )
+      .get("https://api.thecatapi.com/v1/images/search?size=full")
       .then((results) => {
-        document.querySelector(".mood__text").innerHTML = "Because I'm Happy";
+        document.querySelector(".mood-results__mood-text").innerHTML =
+          "Because I'm Happy";
         document.querySelector(
-          ".mood__meme"
-        ).innerHTML = `<img class="mood__meme-image" src=${results.data.link}>`;
+          ".mood-results__meme"
+        ).innerHTML = `<img class="mood-results__meme-image" src=${results.data[0].url}>`;
         console.log(results.data.link);
       });
   };
@@ -88,11 +87,11 @@ let getEmotion = (url) => {
         "https://cors-anywhere.herokuapp.com/https://some-random-api.ml/img/dog"
       )
       .then((results) => {
-        document.querySelector(".mood__text").innerHTML =
+        document.querySelector(".mood-results__mood-text").innerHTML =
           "I AM VERY NEUTRAL AND I WANT A DOG";
         document.querySelector(
-          ".mood__meme"
-        ).innerHTML = `<img class="mood__meme-image" src=${results.data.link}>`;
+          ".mood-results__meme"
+        ).innerHTML = `<img class="mood-results__meme-image" src=${results.data.link}>`;
         console.log(results.data.link);
       });
   };

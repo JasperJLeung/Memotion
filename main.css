@@ -83,31 +83,35 @@
   margin: 0.5rem;
 }
 
-.mood {
-  width: 100%;
-  height: 100%;
+.main-app {
+  padding: 2rem;
   background-color: #84CEEB;
+}
+.main-app__header {
+  padding: 2rem;
+  font-family: "Comic Sans MS";
+  text-align: center;
+  border: 5px dashed white;
+  color: white;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#00e1ff), to(#ff00dd));
+  background-image: linear-gradient(#00e1ff, #ff00dd);
+}
+
+.mood {
+  width: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 2rem;
+  margin: 0 auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-.mood__header {
-  padding: 2rem;
-  font-family: "Comic Sans MS";
-  text-align: center;
-}
-.mood__text {
-  font-family: "Comic Sans MS";
-  font-size: 4rem;
-  color: #5680E9;
-  text-align: center;
+  position: relative;
+  border: 1px dashed #5680E9;
 }
 .mood__cloudinary-button {
   font-family: "Comic Sans MS";
@@ -121,25 +125,73 @@
   background-color: #5ab9ea;
   margin: 0.5rem;
 }
-.mood__image-container {
+
+.mood-results {
+  width: 100%;
+  height: 100%;
+  background-color: #84CEEB;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+.mood-results__header {
+  padding: 2rem;
+  font-family: "Comic Sans MS";
+  text-align: center;
+}
+.mood-results__text {
+  font-family: "Comic Sans MS";
+  font-size: 4rem;
+  color: #5680E9;
+  text-align: center;
+}
+.mood-results__cloudinary-button {
+  font-family: "Comic Sans MS";
+  width: 200px;
+  height: 48px;
+  border-radius: 50px;
+  border: 2px solid white;
+  color: white;
+  font-size: 1rem;
+  padding: 0 2rem;
+  background-color: #5ab9ea;
+  margin: 0.5rem;
+}
+.mood-results__image-container {
   width: 400px;
   height: 400px;
   background-color: white;
 }
-.mood__meme {
+.mood-results__meme {
   width: 400px;
   height: 400px;
 }
-.mood__image {
+.mood-results__image {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.mood__meme-image {
+.mood-results__meme-image {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.mood-results__concatenate {
+  font-size: 4rem;
+  padding: 2rem;
+}
+.mood-results__mood-text {
+  position: absolute;
+  top: 0;
 }
 /*# sourceMappingURL=main.css.map */

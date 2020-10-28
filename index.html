@@ -7,8 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Static Template</title>
   <link rel="stylesheet" href="./main.css">
+
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+
 </head>
 
 <body>
@@ -32,15 +34,22 @@
       </div>
     </header>
     <main>
-        <h1 class="mood__header">Welcome to the next BiLlIoN DoLlAr IdEa!</h1>
+      <h1 class="main-app__header">Welcome to the next BiLlIoN DoLlAr IdEa!</h1>
+      <section class="main-app">
         <div class="mood">
-            <div class="mood__image-container"><img class="mood__image" src="./images/maleAvatar.jpg"/></div>
-            <button id="upload_widget" class="mood__cloudinary-button">Upload files</button>
+          <p class="mood__mood-text">Click the button to upload your photo</p>
+          <button id="upload_widget" class="mood__cloudinary-button">Upload files</button>
         </div>
-        <div class="mood__text">Happy HappyHappy HappyHappy HappyHappy HappyHappy Happy</div>
-        <div class="mood">
-            <div class="mood__meme"><img class="mood__meme-image" src="https://i.some-random-api.ml/4rf7R8en6y.jpg"/></div>
+
+        <div class="mood-results">
+          <p class="mood-results__mood-text">Found your mood, you are: Happy</p>
+          <div class="mood-results__image-container"><img class="mood-results__image" src="./images/maleAvatar.jpg" />
+          </div>
+          <div class="mood-results__concatenate"> + </div>
+          <div class="mood-results__meme"><img class="mood-results__meme-image" src="./images/transparentQ.png" /></div>
         </div>
+
+      </section>
     </main>
     <footer>
       <div class="footer__container">
@@ -55,7 +64,10 @@
         </div>
       </div>
     </footer>
+
+
     <script src="./script.js"></script>
+
 </body>
 
 </html>
