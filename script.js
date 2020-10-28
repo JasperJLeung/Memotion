@@ -37,8 +37,8 @@ let getEmotion = (url) => {
         getEmotion(result.info.secure_url);
         document.querySelector("#upload_widget").classList.toggle("display", 1);
         document.querySelector(
-          ".mood__image"
-        ).innerHTML = `<img src=${result.info.secure_url}>`;
+          ".mood__image-container"
+        ).innerHTML = `<img class="mood__image" src=${result.info.secure_url}>`;
       }
     }
   );
@@ -63,7 +63,7 @@ let getEmotion = (url) => {
           "Uh Oh Someone's Looking Sad :(";
         document.querySelector(
           ".mood__meme"
-        ).innerHTML = `<img src=${results.data.link}>`;
+        ).innerHTML = `<img class="mood__meme-image" src=${results.data.link}>`;
         console.log(results.data.link);
       });
   };
@@ -74,11 +74,10 @@ let getEmotion = (url) => {
         "https://cors-anywhere.herokuapp.com/https://some-random-api.ml/img/cat"
       )
       .then((results) => {
-        document.querySelector(".mood__text").innerHTML =
-          "I AM VERY CAT I MEANT HAPPY";
+        document.querySelector(".mood__text").innerHTML = "Because I'm Happy";
         document.querySelector(
           ".mood__meme"
-        ).innerHTML = `<img src=${results.data.link}>`;
+        ).innerHTML = `<img class="mood__meme-image" src=${results.data.link}>`;
         console.log(results.data.link);
       });
   };
@@ -93,7 +92,7 @@ let getEmotion = (url) => {
           "I AM VERY NEUTRAL AND I WANT A DOG";
         document.querySelector(
           ".mood__meme"
-        ).innerHTML = `<img src=${results.data.link}>`;
+        ).innerHTML = `<img class="mood__meme-image" src=${results.data.link}>`;
         console.log(results.data.link);
       });
   };
