@@ -1,4 +1,5 @@
 let djKhaledChangeItAll = document.querySelector(".easter-egg");
+let coolHeader = document.querySelector(".main-app__header");
 
 let getEmotion = (url) => {
   var bodyFormData = new FormData();
@@ -125,4 +126,12 @@ djKhaledChangeItAll.addEventListener("click", () => {
   djKhaledChangeItAll.id === "happy" && beHappy();
   djKhaledChangeItAll.id === "sad" && sadnessBeGone();
   djKhaledChangeItAll.id === "neutral" && beHappier();
+});
+
+coolHeader.addEventListener("mouseover", () => {
+  coolHeader.innerText = "Just kidding 👻";
+});
+
+coolHeader.addEventListener("mouseleave", () => {
+  coolHeader.innerText = "Welcome to the next BiLlIoN DoLlAr IdEa!";
 });
