@@ -44,8 +44,12 @@
         align-items: center;
         color: white;
         margin-top: 1rem;
-  
+        & a{
+            text-decoration: none;
+            color: white;
+        } 
     }
+    
   
     &__right{
         width: 15%;
@@ -244,6 +248,7 @@
      }
   }
 
+
   .footer__container{
     padding: 2rem 2rem;
     width: 100%;
@@ -255,9 +260,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
   }
+
+
+  .footer__container--top{
+    padding-bottom: 0;
+}
+    .footer__container--bottom{
+    padding-top: 1rem;
+}
 
   .emoji__laughing{
       width: 2rem;
       height: 2rem;
+  }
+
+  .about__link{
+      text-decoration: none;
+      color: white;
   }

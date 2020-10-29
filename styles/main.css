@@ -58,6 +58,10 @@
   color: white;
   margin-top: 1rem;
 }
+.header__links-container a {
+  text-decoration: none;
+  color: white;
+}
 .header__right {
   width: 15%;
   display: -webkit-box;
@@ -287,8 +291,21 @@
           align-items: center;
 }
 
+.footer__container--top {
+  padding-bottom: 0;
+}
+
+.footer__container--bottom {
+  padding-top: 1rem;
+}
+
 .emoji__laughing {
   width: 2rem;
   height: 2rem;
+}
+
+.about__link {
+  text-decoration: none;
+  color: white;
 }
 /*# sourceMappingURL=main.css.map */
