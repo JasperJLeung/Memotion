@@ -112,6 +112,14 @@ let beHappier = () => {
 let emojis = document.querySelectorAll(".mood-emojis__emoji");
 emojis.forEach((emoji) => {
   emoji.addEventListener("click", (e) => {
+    document
+      .querySelector(".easter-egg")
+      .classList.toggle("easter-egg--toggler");
+
+    document.querySelector(
+      ".mood-results__meme"
+    ).innerHTML = `<img class="mood-results__meme-image" src=${"../images/tenor.gif"}>`;
+
     e.target.className === "mood-emojis__happy" && beHappy();
     e.target.className === "mood-emojis__sad" && sadnessBeGone();
     e.target.className === "mood-emojis__neutral" && beHappier();
@@ -123,6 +131,9 @@ emojis.forEach((emoji) => {
 
 djKhaledChangeItAll.addEventListener("click", () => {
   console.log("i fire");
+  document.querySelector(
+    ".mood-results__meme"
+  ).innerHTML = `<img class="mood-results__meme-image" src=${"../images/tenor.gif"}>`;
   djKhaledChangeItAll.id === "happy" && beHappy();
   djKhaledChangeItAll.id === "sad" && sadnessBeGone();
   djKhaledChangeItAll.id === "neutral" && beHappier();
