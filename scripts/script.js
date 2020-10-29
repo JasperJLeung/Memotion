@@ -44,7 +44,7 @@ var myWidget = cloudinary.createUploadWidget(
       ).innerHTML = `<img class="mood-results__image" src=${result.info.secure_url}>`;
       document.querySelector(
         ".mood-results__meme"
-      ).innerHTML = `<img class="mood-results__meme-image" src=${"./images/tenor.gif"}>`;
+      ).innerHTML = `<img class="mood-results__meme-image" src=${"../images/tenor.gif"}>`;
       document
         .querySelector(".easter-egg")
         .classList.toggle("easter-egg--toggler");
