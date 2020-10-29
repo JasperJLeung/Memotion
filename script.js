@@ -1,3 +1,5 @@
+let djKhaledChangeItAll = document.querySelector(".easter-egg");
+
 let getEmotion = (url) => {
   var bodyFormData = new FormData();
   bodyFormData.append("photo", url);
@@ -14,9 +16,10 @@ let getEmotion = (url) => {
     .then(function (response) {
       //handle success
       console.log(response.data);
-      response.data.faces[0].emotions.happiness && beHappy();
-      response.data.faces[0].emotions.sadness && sadnessBeGone();
-      response.data.faces[0].emotions.neutral && beHappier();
+      let emotions = response.data.faces[0].emotions;
+      emotions.happiness && emotions.happiness > 0.66 && beHappy();
+      emotions.sadness && emotions.sadness > 0.66 && sadnessBeGone();
+      emotions.neutral && emotions.neutral > 0.66 && beHappier();
     })
     .catch(function (response) {
       //handle error
@@ -39,6 +42,12 @@ var myWidget = cloudinary.createUploadWidget(
       document.querySelector(
         ".mood-results__image-container"
       ).innerHTML = `<img class="mood-results__image" src=${result.info.secure_url}>`;
+      document.querySelector(
+        ".mood-results__meme"
+      ).innerHTML = `<img class="mood-results__meme-image" src=${"./images/tenor.gif"}>`;
+      document
+        .querySelector(".easter-egg")
+        .classList.toggle("easter-egg--toggler");
     }
   }
 );
@@ -59,6 +68,7 @@ let sadnessBeGone = () => {
       "https://cors-anywhere.herokuapp.com/https://some-random-api.ml/img/panda"
     )
     .then((results) => {
+      djKhaledChangeItAll.id = "sad";
       document.querySelector(".mood-results__mood-text").innerHTML =
         "Uh Oh Someone's Looking Sad :(";
       document.querySelector(
@@ -72,6 +82,7 @@ let beHappy = () => {
   axios
     .get("https://api.thecatapi.com/v1/images/search?size=full")
     .then((results) => {
+      djKhaledChangeItAll.id = "happy";
       document.querySelector(".mood-results__mood-text").innerHTML =
         "Yip yip Hooray! Someone's looking Happayy! :)";
       document.querySelector(
@@ -87,6 +98,7 @@ let beHappier = () => {
       "https://cors-anywhere.herokuapp.com/https://some-random-api.ml/img/dog"
     )
     .then((results) => {
+      djKhaledChangeItAll.id = "neutral";
       document.querySelector(".mood-results__mood-text").innerHTML =
         "Make up your mind! Either be happy or be sad.";
       document.querySelector(
@@ -104,4 +116,13 @@ emojis.forEach((emoji) => {
     e.target.className === "mood-emojis__neutral" && beHappier();
     console.log(e.target.className);
   });
+});
+
+// let DJ khaled Change and show new image for the current mood
+
+djKhaledChangeItAll.addEventListener("click", () => {
+  console.log("i fire");
+  djKhaledChangeItAll.id === "happy" && beHappy();
+  djKhaledChangeItAll.id === "sad" && sadnessBeGone();
+  djKhaledChangeItAll.id === "neutral" && beHappier();
 });

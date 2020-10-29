@@ -34,10 +34,6 @@
         margin-top: 0.5rem;
     }
   
-    &__middle {
-        width: 50%;
-        
-    }
   
     &__links-container{
         list-style: none;
@@ -221,6 +217,7 @@
     &__concatenate {
         font-size: 4rem;
         padding: 2rem;
+        color: #ffffff;
       }
   
     &__mood-text {
@@ -232,6 +229,19 @@
         width: 50%;
         margin: 2rem auto;
     }
+  }
+
+
+  .easter-egg {
+      display: flex;
+      justify-content: center;
+      align-items:center;
+      cursor: pointer;
+     // display: none;
+
+     &--toggler {
+         display: none;
+     }
   }
 
   .footer__container{
