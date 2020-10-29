@@ -3,7 +3,6 @@
           box-sizing: border-box;
   padding: 0;
   margin: 0;
-  cursor: default;
 }
 
 *, *:before, *:after {
@@ -131,6 +130,7 @@
   padding: 0 2rem;
   background-color: #8860D0;
   margin: 0.5rem;
+  cursor: pointer;
 }
 .mood__mood-text {
   font-family: "Comic Sans MS";
@@ -175,6 +175,9 @@
 .mood-emojis__emoji {
   width: 100px;
   height: 100px;
+}
+.mood-emojis__emoji:hover {
+  cursor: pointer;
 }
 
 .mood-results {
