@@ -73,7 +73,7 @@ let getEmotion = (url) => {
       .get("https://api.thecatapi.com/v1/images/search?size=full")
       .then((results) => {
         document.querySelector(".mood-results__mood-text").innerHTML =
-          "Because I'm Happy";
+          "Yip yip Hooray! Someone's looking Happayy! :)";
         document.querySelector(
           ".mood-results__meme"
         ).innerHTML = `<img class="mood-results__meme-image" src=${results.data[0].url}>`;
@@ -88,7 +88,7 @@ let getEmotion = (url) => {
       )
       .then((results) => {
         document.querySelector(".mood-results__mood-text").innerHTML =
-          "I AM VERY NEUTRAL AND I WANT A DOG";
+          "Make up your mind! Either be happy or be sad.";
         document.querySelector(
           ".mood-results__meme"
         ).innerHTML = `<img class="mood-results__meme-image" src=${results.data.link}>`;
